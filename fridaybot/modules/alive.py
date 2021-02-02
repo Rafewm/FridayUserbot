@@ -63,7 +63,6 @@ async def friday(alive):
                   f"➥ **Version** : `6.5`\n"
                   f"➥ **My Boss** : {DEFAULTUSER} \n"      
                   "[Creator](https://t.me/Rafewm)")
-    https://t.me/paperplanechannel
     await borg.send_message(
         alive.chat_id,
         pm_caption,
