@@ -53,7 +53,7 @@ async def friday(alive):
     uptime = get_readable_time((time.time() - Lastupdate))
     repo = Repo()
     branch_name = repo.active_branch.name
-    pm_caption = ("➥ **FRIDAY IS:** `ONLINE`\n\n"
+    pm_caption = ("➥ **Bot:** `ONLINE`\n\n"
                   "➥ **SYSTEMS STATS**\n"
                   f"➥ **Telethon Version:** `{tv}` \n"
                   f"➥ **Python:** `{platform.python_version()}` \n"
@@ -61,13 +61,9 @@ async def friday(alive):
                   "➥ **Database Status:**  `Functional`\n"
                   f"➥ **Current Branch** : `{branch_name}`\n"
                   f"➥ **Version** : `6.5`\n"
-                  f"➥ **My Boss** : {DEFAULTUSER} \n"
-                  "➥ **Heroku Database** : `AWS - Working Properly`\n\n"
-                  "➥ **License** : [GNU General Public License v3.0](github.com/StarkGang/FridayUserbot/blob/master/LICENSE)\n"
-                  "➥ **Copyright** : By [StarkGang@Github](GitHub.com/StarkGang)\n"
-                  "➥ **Check Stats By Doing** `.stat`. \n\n"
-                  "[🇮🇳 Deploy FridayUserbot 🇮🇳](https://telegra.ph/FRIDAY-06-15)")
-    
+                  f"➥ **My Boss** : {DEFAULTUSER} \n"      
+                  "[Creator](https://t.me/Rafewm)")
+    https://t.me/paperplanechannel
     await borg.send_message(
         alive.chat_id,
         pm_caption,
