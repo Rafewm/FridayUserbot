@@ -61,7 +61,7 @@ async def friday(alive):
                   "➥ **Database Status:**  `Functional`\n"
                   f"➥ **Current Branch** : `{branch_name}`\n"
                   f"➥ **Version** : `6.5`\n"
-                  f"➥ **My Boss** : {DEFAULTUSER} \n"      
+                  f"➥ **My Boss rwgsdscf** : {DEFAULTUSER} \n"      
                   "[Creator](https://t.me/Rafewm)")
     await borg.send_message(
         alive.chat_id,
