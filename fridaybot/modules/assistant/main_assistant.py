@@ -46,7 +46,7 @@ async def start(event):
     hmmwow = devlop.first_name
     vent = event.chat_id
     mypic = Config.ASSISTANT_START_PIC
-    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [Friday Userbot](t.me/FridayOT)"
+    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nYou can talk with my developer @rafewm"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
@@ -71,10 +71,7 @@ async def start(event):
             file=mypic,
             caption=starttext,
             link_preview=False,
-            buttons=[
-                [custom.Button.inline("Deploy your Friday 🇮🇳", data="deploy")],
-                [Button.url("Help Me ❓", "t.me/Fridayot")],
-            ],
+           
         )
         if os.path.exists(mypic):
             os.remove(mypic)
