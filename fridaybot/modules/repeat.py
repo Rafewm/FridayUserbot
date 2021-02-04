@@ -10,7 +10,7 @@ async def _(event):
         return
     message = event.text[10:]
     count = int(event.text[8:10])
-    repmessage = message * count/2
+    repmessage = message * 10
     await wait([event.respond(repmessage) for i in range(count)])
     await event.delete()
 
