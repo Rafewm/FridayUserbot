@@ -517,7 +517,7 @@ async def check_if_subbed(channel_id, event, bot):
         return False
     
 async def _ytdl(url, is_it, event, tgbot):
-    await event.edit("`Ok Downloading This Video / Audio - Please Wait.` \n**Powered By @FridayOT**")
+    await event.edit("`Ok Downloading This Video / Audio - Please Wait.` \n**Powered By @Rafewm**")
     if is_it:
         opts = {
             "format": "bestaudio",
@@ -578,7 +578,7 @@ async def _ytdl(url, is_it, event, tgbot):
         )
         await event.edit(
             file=lol_m,
-            text=f"{ytdl_data['title']} \n**Uploaded Using @FRidayOt**"
+            text=f"{ytdl_data['title']} \n**Uploaded Using @Rafewm**"
         )
         os.remove(file_stark)
     elif video:
@@ -595,7 +595,7 @@ async def _ytdl(url, is_it, event, tgbot):
         )
         await event.edit(
             file=lol_m,
-            text=f"{ytdl_data['title']} \n**Uploaded Using @FRidayOt**"
+            text=f"{ytdl_data['title']} \n**Uploaded Using @Rafewm**"
         )
         os.remove(file_stark)
 
