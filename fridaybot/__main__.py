@@ -140,7 +140,7 @@ if Config.ENABLE_ASSISTANTBOT == "ENABLE":
     fridaydevs.info("Friday And Assistant Bot Have Been Installed Successfully !")
 else:
     fridaydevs.info("Friday Has Been Installed Sucessfully !")
-    fridaydevs.info("You Can Visit @FridayOT For Any Support Or Doubts.")
+    fridaydevs.info("My creator @Rafewm")
         
 bot.tgbot.loop.run_until_complete(check_inline_on_warner(bot.tgbot))
 
