@@ -54,7 +54,7 @@ async def echo(cat):
             await edit_or_reply(cat, "The user is already enabled with echo mode ")
             return
         addecho(user_id, chat_id)
-        await edit_or_reply(cat, "Hi")
+        await edit_or_reply(cat, ".alive")
     else:
         await edit_or_reply(cat, "Reply to a User's Message to echo his messages")
 
