@@ -5699,7 +5699,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "Rafewm Funny": "List of All Available Fun Commands.\
+        "Rafewm_Funny": "List of All Available Fun Commands.\
 \n\n.slash\
 \n\n.para\
 \n\n.question\
