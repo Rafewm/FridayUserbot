@@ -15,7 +15,6 @@ async def _(event):
     datetime.now()
     BASE_URL = "http://www.google.com"
     if event.reply_to_msg_id:
-        await event.edit("Processing...")
         previous_message = await event.get_reply_message()
         previous_message_text = previous_message.message
         if previous_message.media:
