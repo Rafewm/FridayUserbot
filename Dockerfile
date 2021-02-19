@@ -2,17 +2,68 @@ FROM kalilinux/kali-rolling
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TERM xterm-256color
 RUN apt-get update && apt upgrade -y && apt-get install sudo -y
-ENV APP_ID=2897957
-ENV API_HASH=bff358385e14e625adba25945261b2fe
-ENV TG_BOT_TOKEN_BF_HER=1658080214:AAGBv0DswoyCisxNQsBYC6L1VGOYsGNnlA4
-ENV STRING_SESSION=1BJWap1wBu0bvUyPadUcjCWqdX4UWAyG9U0egRSy_4h5V0y54cXvFADh5o8o27tchfbW1pdfSj7CN-E5bfoRq8DmgBE-zonN_e8hEGZR0TILOM5pgRlo_Fxm41cELLa6Oi3d21ZdGulx0lSctxFEtSsidVffELrSCXVIh1lMxe3zfqgysD9DPTd6G8-qBk_iCPu4ojurD4LQVDY3Upfpy61bs6QevK4FdYdifhQbNuvhIy7u1FdzrjsAEXmQugW5cNKPPRQlggxTQzLpOgqzuvCvLBFZKF4GjReA4bEXAkQnP73drhqJyHexvodBi71vhC7e5byvIOA0uptrrcRTPBgnVrEyTjAY=
-ENV PRIVATE_GROUP_ID=-1001258183253
+
+RUN apt-get install -y\
+    coreutils \
+    apt-utils \
+    bash \
+    bzip2 \
+    build-essential \
+    cmake \
+    curl \
+    tesseract-ocr \
+    tesseract-ocr-eng \
+    imagemagick \
+    figlet \
+    gcc \
+    g++ \
+    git \
+    libevent-dev \
+    libjpeg-dev \
+    libffi-dev \
+    libpq-dev \
+    libsqlite3-dev \
+    libwebp-dev \
+    libgl1 \
+    musl \
+    neofetch \
+    libcurl4-openssl-dev \
+    postgresql \
+    postgresql-client \
+    postgresql-server-dev-all \
+    openssl \
+    mediainfo \
+    wget \
+    python3 \
+    python3-dev \
+    python3-pip \
+    libreadline-dev \
+    zipalign \
+    sqlite3 \
+    ffmpeg \
+    libsqlite3-dev \
+    axel \
+    zlib1g-dev \
+    recoverjpeg \
+    zip \
+    megatools \
+    libfreetype6-dev \
+    procps \
+    policykit-1
 
 
-EXPOSE 9876
-
-RUN apt-get install -y xz-utils
-
-COPY start.sh /start.sh
-COPY index.html /index.html
-CMD ["bash","/start.sh"]
+RUN apt-get autoremove --purge
+RUN pip3 install --upgrade pip setuptools 
+RUN pip3 install --upgrade pip
+RUN if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
+RUN if [ ! -e /usr/bin/python ]; then ln -sf /usr/bin/python3 /usr/bin/python; fi 
+RUN rm -r /root/.cache
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb
+RUN wget https://chromedriver.storage.googleapis.com/88.0.4324.96/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && chmod +x chromedriver && mv -f chromedriver /usr/bin/ && rm chromedriver_linux64.zip
+RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/master.zip && unzip opencv.zip && mv -f opencv-master /usr/bin/ && rm opencv.zip
+RUN git clone https://github.com/Rafewm/FridayUserbot /root/fridaybot
+RUN mkdir /root/fridaybot/bin/
+WORKDIR /root/fridaybot/
+RUN chmod +x /usr/local/bin/*
+RUN pip3 install -r requirements.txt
+CMD ["bash","start.sh"]
